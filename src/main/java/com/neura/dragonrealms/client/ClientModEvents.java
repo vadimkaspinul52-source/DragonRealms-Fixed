@@ -9,7 +9,7 @@ import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 
-@EventBusSubscriber(modid = DragonRealms.MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+@EventBusSubscriber(modid = DragonRealms.MOD_ID, value = Dist.CLIENT)
 public final class ClientModEvents {
     private ClientModEvents() {}
 
@@ -20,6 +20,6 @@ public final class ClientModEvents {
 
     @SubscribeEvent
     public static void registerLayers(EntityRenderersEvent.RegisterLayerDefinitions event) {
-        event.add(FireDrakeModel.LAYER, FireDrakeModel::createBodyLayer);
+        event.registerLayerDefinition(FireDrakeModel.LAYER, FireDrakeModel::createBodyLayer);
     }
 }
