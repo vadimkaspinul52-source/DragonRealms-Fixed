@@ -63,7 +63,7 @@ public final class FireDrakeEntity extends Monster {
         }
 
         this.lastBreathTick = this.tickCount;
-        target.setSecondsOnFire(3);
+        target.igniteForSeconds(3);
         target.hurtServer(serverLevel, this.damageSources().mobAttack(this), 5.0F);
         serverLevel.playSound(null, this, SoundEvents.BLAZE_SHOOT, SoundSource.HOSTILE, 1.0F, 0.75F);
 
